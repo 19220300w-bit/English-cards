@@ -18,6 +18,18 @@
 <div class="app">
  <header><div class="identity"><div class="mark"><img src="./icons/logo.svg" alt="Логотип карточек"></div><div><div class="eyebrow">ENGLISH PRACTICE</div><h1>Мои карточки</h1></div></div><button class="icon-btn" id="settingsBtn" aria-label="Резервное копирование" title="Резервное копирование"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"/></svg></button></header>
  <main>
+  <div class="desktop-layout">
+   <aside class="desktop-sidebar" aria-label="Категории карточек">
+    <div class="sidebar-heading">
+     <span class="sidebar-eyebrow">ВАША КОЛЛЕКЦИЯ</span>
+     <h2>Категории</h2>
+     <p>Выбери набор для изучения</p>
+    </div>
+    <nav id="desktopCategoryList" class="desktop-category-list" aria-label="Выбор категории"></nav>
+    <button id="desktopCreateCategory" class="desktop-create-category" type="button"><span aria-hidden="true">＋</span> Новая категория</button>
+    <div class="sidebar-tip">Карточка может находиться в нескольких категориях. Все слова остаются в общей коллекции.</div>
+   </aside>
+   <div class="workspace">
    <div class="topline"><span id="countText">0 карточек</span><button class="text-btn" id="listBtn">Все карточки <span aria-hidden="true">↗</span></button></div><div class="collection-row"><button class="collection-select" id="collectionBtn" type="button">▤ Все категории <span aria-hidden="true">⌄</span></button></div>
    <section id="studyView" aria-label="Изучение карточек"><div class="study-tools"><button id="shuffleBtn" class="tool-btn" type="button" aria-pressed="false">⇄ Перемешать</button><button id="reverseBtn" class="tool-btn" type="button" aria-pressed="false">⇅ Поменять стороны</button></div>
      <div class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="Перевернуть карточку"><div class="card-inner"><div class="card-face front"><div class="card-meta">ЛИЦЕВАЯ СТОРОНА</div><div class="card-content" id="frontText"></div><div class="tap-hint">↻ Нажми, чтобы перевернуть</div></div><div class="card-face back"><div class="card-meta">ОБРАТНАЯ СТОРОНА</div><div class="card-content" id="backText"></div><div class="tap-hint">↻ Нажми, чтобы перевернуть</div></div></div></div>
@@ -27,6 +39,8 @@
    </section>
    <section id="emptyView" class="empty hidden"><div class="empty-icon">✦</div><h2>Начнём с первого слова?</h2><p>Создай карточку: английское слово на одной стороне, перевод — на другой.</p></section>
    <button id="addBtn" class="primary-btn"><span class="plus">＋</span> Новая карточка</button>
+   </div>
+  </div>
  </main>
  <footer>Без регистрации · Без рекламы · Работает офлайн</footer>
 </div>

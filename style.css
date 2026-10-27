@@ -19,3 +19,144 @@ html.keyboard-navigation dialog:focus-visible {
   outline-offset: 3px;
   border-radius: 12px;
 }
+
+
+/* English Cards v3.1.0 — адаптивная компоновка для iPad и компьютера.
+   Исходные мобильные правила оставлены без изменений. */
+.desktop-sidebar { display: none; }
+.workspace { min-width: 0; }
+
+/* Планшет: используем больше доступной ширины, но оставляем
+   знакомое мобильное расположение элементов. */
+@media (min-width: 700px) {
+  .app {
+    max-width: 810px;
+    padding: 36px 36px 30px;
+  }
+  header { margin-bottom: 38px; }
+  .mark { width: 57px; height: 57px; border-radius: 17px; }
+  h1 { font-size: 28px; }
+  .eyebrow { font-size: 11px; }
+  .flashcard { height: 365px; }
+  .card-face { padding: 27px 32px; }
+  .card-content { font-size: clamp(30px, 4.5vw, 47px); }
+  .tool-btn, .review-start { font-size: 14px; min-height: 48px; }
+  .sheet { width: min(calc(100% - 60px), 580px); padding: 30px; }
+  #listDialog { width: min(calc(100% - 60px), 760px); }
+  #cardsList { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); align-items: stretch; }
+  .list-item { min-width: 0; }
+}
+
+/* Компьютер и широкий iPad: слева постоянно видны категории,
+   справа — большая область карточек и управления. */
+@media (min-width: 1024px) {
+  .app {
+    max-width: 1320px;
+    padding: 34px clamp(28px, 4.3vw, 74px) 30px;
+  }
+  header {
+    margin-bottom: 27px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eee7df;
+  }
+  .identity { gap: 17px; }
+  .mark { width: 61px; height: 61px; }
+  h1 { font-size: 30px; }
+  .eyebrow { letter-spacing: 2.4px; }
+  main { flex: 1; }
+  .desktop-layout {
+    display: grid;
+    grid-template-columns: clamp(225px, 23vw, 276px) minmax(0, 1fr);
+    gap: clamp(24px, 3.6vw, 52px);
+    align-items: start;
+  }
+  .desktop-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: sticky;
+    top: 28px;
+    padding: 23px 16px 18px;
+    background: #fffdfb;
+    border: 1px solid #eee6dc;
+    border-radius: 23px;
+    box-shadow: 0 14px 42px rgba(60,45,31,.035);
+  }
+  .sidebar-heading { padding: 0 10px 15px; }
+  .sidebar-eyebrow { font-size: 10px; color: #b28b70; font-weight: 800; letter-spacing: 1.7px; }
+  .sidebar-heading h2 { font-size: 23px; letter-spacing: -.55px; margin: 11px 0 5px; }
+  .sidebar-heading p { font-size: 12px; line-height: 1.5; color: #9e9083; margin: 0; }
+  .desktop-category-list { display: flex; flex-direction: column; gap: 5px; }
+  .sidebar-category {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    border: 1px solid transparent;
+    background: transparent;
+    border-radius: 13px;
+    text-align: left;
+    color: #675950;
+    font-weight: 650;
+    transition: background .15s, border-color .15s;
+  }
+  .sidebar-category:hover { background: #faf4ee; }
+  .sidebar-category.is-active {
+    background: #f8e9da;
+    border-color: #edd4c0;
+    color: #965f3d;
+  }
+  .sidebar-category .category-symbol { flex: none; width: 21px; font-size: 18px; text-align: center; color: #ac8063; }
+  .sidebar-category .category-name { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; }
+  .sidebar-category .category-number { flex: none; color: #aa9484; font-size: 11px; font-variant-numeric: tabular-nums; }
+  .desktop-create-category {
+    display: block;
+    background: transparent;
+    text-align: left;
+    border: 1px dashed #dccabb;
+    color: #9c7051;
+    padding: 12px 13px;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 750;
+    margin-top: 18px;
+  }
+  .desktop-create-category:hover { background: #fbf4ec; }
+  .sidebar-tip { margin: 22px 8px 3px; padding-top: 17px; border-top: 1px solid #f0e7dd; color: #aca094; font-size: 11px; line-height: 1.65; }
+  .workspace {
+    min-width: 0;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 4px 0 12px;
+  }
+  .topline { font-size: 15px; margin: 2px 0 22px; }
+  .topline .text-btn { font-size: 14px; }
+  .collection-row { display: none; }
+  .study-tools { margin: 0 0 18px; gap: 13px; }
+  .tool-btn { font-size: 14px; padding: 13px 17px; border-radius: 14px; }
+  .flashcard { height: clamp(355px, 33vw, 430px); }
+  .card-face { border-radius: 29px; padding: 31px 38px; }
+  .card-meta { font-size: 11px; }
+  .card-content { font-size: clamp(35px, 4.3vw, 54px); }
+  .tap-hint { font-size: 13px; }
+  .review-toolbar { max-width: 680px; margin: 17px auto 3px; }
+  .review-start { padding: 13px; }
+  .review-actions { max-width: 680px; margin-left: auto; margin-right: auto; }
+  .progress { margin: 30px 0 21px; }
+  .pager { max-width: 380px; }
+  .pager-btn { height: 53px; width: 66px; font-size: 26px; }
+  .subtle-btn { margin: 22px auto 24px; }
+  #addBtn { max-width: 380px; margin: 0 auto; }
+  #listDialog { width: min(calc(100% - 80px), 1020px); max-height: min(88dvh, 900px); }
+  #listDialog .cards-list { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  footer { padding-top: 26px; }
+}
+
+@media (min-width: 1500px) {
+  .app { max-width: 1400px; }
+  .desktop-layout { grid-template-columns: 280px minmax(0,1fr); }
+}
